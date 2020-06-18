@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', async function() {
   var repoCards = document.querySelectorAll('.repo-card');
   
   repoCards.forEach(async function(el) {
-    el.innerHTML = `<div class='repo-card-inner'></div>`
+    el.innerHTML = `<div style="border: 1px solid #e1e4e8; border-radius: 6px; background: white; padding: 16px; font-size: 14px; line-height: 1.5; color: #24292e;"></div>`
   })
 
   var [emojis, colors] = await Promise.all([
