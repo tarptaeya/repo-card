@@ -7,6 +7,34 @@ window.addEventListener('DOMContentLoaded', async function() {
   resp = await fetch('https://raw.githubusercontent.com/ozh/github-colors/master/colors.json');
   var colors = await resp.json();
 
+  var styleTag = document.querySelectorAll('#repo-card-style')[0];
+  if (!styleTag) {
+    styleTag = document.createElement('style');
+    styleTag.innerText = `
+      .repo-card-inner {
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+        border: 1px solid #e1e4e8;
+        border-radius: 6px;
+        background: white;
+        padding: 16px;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #24292e;
+      }
+      .repo-card-link {
+        text-decoration: none;
+        color: inherit;
+      }
+      .repo-card-link:hover {
+        text-decoration: underline;
+      }
+    `;
+    var headTag = document.getElementsByTagName('head')[0]
+    if (!headTag) {
+      return;
+    }
+    headTag.appendChild(styleTag);
+  }
 
   document.querySelectorAll('.repo-card').forEach(async function(el) {
     var name = el.getAttribute('data-repo');
@@ -25,11 +53,11 @@ window.addEventListener('DOMContentLoaded', async function() {
     });
 
     el.innerHTML = `
-    <div style="font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; border: 1px solid #e1e4e8; border-radius: 6px; background: white; padding: 16px; font-size: 14px; line-height: 1.5; color: #24292e;">
+    <div class='repo-card-inner'>
       <div style="display: flex; align-items: center;">
         <svg style="fill: #586069; margin-right: 8px;" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path></svg>
         <span style="font-weight: 600; color: #0366d6;">
-          <a style="text-decoration: none; color: inherit;" href="${data.html_url}">${data.name}</a>
+          <a class="repo-card-link" href="${data.html_url}">${data.name}</a>
         </span>
       </div>
       <div style="display: ${data.fork ? 'block' : 'none'}; font-size: 12px; color: #586069;">Forked from <a style="color: inherit; text-decoration: none;" href="${data.fork ? data.source.html_url : ''}">${data.fork ? data.source.full_name : ''}</a></div>
