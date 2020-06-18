@@ -17,8 +17,6 @@ window.addEventListener('DOMContentLoaded', async function() {
     data.description = data.description.replace(/:\w+:/g, function(match) {
       var name = match.substring(1, match.length - 1);
       var emoji = emojis[name];
-      console.log(name);
-      console.log(emoji);
       if (emoji) {
         return `<span><img src="${emoji}" style="width: 1rem; height: 1rem; vertical-align: -0.2rem;"></span>`;
       }
