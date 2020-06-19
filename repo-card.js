@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', async function() {
     resp = await fetch('https://api.github.com/repos/' + name);
     var data = await resp.json();
 
-    data.description = data.description.replace(/:\w+:/g, function(match) {
+    data.description = (data.description || '').replace(/:\w+:/g, function(match) {
       var name = match.substring(1, match.length - 1);
       var emoji = emojis[name];
       if (emoji) {
