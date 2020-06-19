@@ -16,5 +16,10 @@ For a live demo, visit [https://tarptaeya.github.io/repo-card](https://tarptaeya
 <div class="repo-card" data-repo="username/repository"></div>
 ```
 
+## Features
+- Supports GitHub emojis
+- Supports language colors
+- Creates card similar to GitHub pinned repository's style
+
 ### Thanks
 - [ozh/github-colors](https://github.com/ozh/github-colors) for providing GitHub colors for all the languages.
