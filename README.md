@@ -19,6 +19,8 @@ For a live demo, visit [https://tarptaeya.github.io/repo-card](https://tarptaeya
 ## Features
 - Supports GitHub emojis
 - Supports language colors
+- Hides stars and forks when their count is 0.
+- Shows the source repository in case of fork.
 - Creates card similar to GitHub pinned repository's style
 
 ### Thanks
