@@ -1,17 +1,19 @@
 window.addEventListener('DOMContentLoaded', async function() {
-  var resp;
+  var repoCards = document.querySelectorAll('.repo-card');
+  
+  repoCards.forEach(async function(el) {
+    el.innerHTML = `<div style="border: 1px solid #e1e4e8; border-radius: 6px; background: white; padding: 16px; font-size: 14px; line-height: 1.5; color: #24292e;"></div>`
+  })
 
-  resp = await fetch('https://api.github.com/emojis');
-  var emojis = await resp.json();
+  var [emojis, colors] = await Promise.all([
+    fetch('https://api.github.com/emojis').then(resp => resp.json()),
+    fetch('https://raw.githubusercontent.com/ozh/github-colors/master/colors.json').then(resp => resp.json())
+  ])
 
-  resp = await fetch('https://raw.githubusercontent.com/ozh/github-colors/master/colors.json');
-  var colors = await resp.json();
-
-
-  document.querySelectorAll('.repo-card').forEach(async function(el) {
+  repoCards.forEach(async function(el) {
     var name = el.getAttribute('data-repo');
 
-    resp = await fetch('https://api.github.com/repos/' + name);
+    var resp = await fetch('https://api.github.com/repos/' + name);
     var data = await resp.json();
 
     data.description = (data.description || '').replace(/:\w+:/g, function(match) {
