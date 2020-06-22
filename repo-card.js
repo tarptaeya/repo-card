@@ -35,8 +35,8 @@ window.addEventListener('DOMContentLoaded', async function() {
       <div style="display: ${data.fork ? 'block' : 'none'}; font-size: 12px; color: #586069;">Forked from <a style="color: inherit; text-decoration: none;" href="${data.fork ? data.source.html_url : ''}">${data.fork ? data.source.full_name : ''}</a></div>
       <div style="font-size: 12px; margin-bottom: 16px; margin-top: 8px; color: #586069;">${data.description}</div>
       <div style="font-size: 12px; color: #586069; display: flex;">
-        <div style="margin-right: 16px;">
-          <span style="width: 12px; height: 12px; border-radius: 100%; background-color: ${colors[data.language].color}; display: inline-block; top: 1px; position: relative;"></span>
+        <div style="${data.language ? '' : 'display: none'}; margin-right: 16px;">
+          <span style="width: 12px; height: 12px; border-radius: 100%; background-color: ${data.language ? colors[data.language].color : ''}; display: inline-block; top: 1px; position: relative;"></span>
           <span>${data.language}</span>
         </div>
         <div style="display: ${data.stargazers_count == 0 ? 'none' : 'flex'}; align-items: center; margin-right: 16px;">
