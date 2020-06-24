@@ -1,22 +1,21 @@
 window.addEventListener('DOMContentLoaded', async function() {
-  var resp;
+  async function get(url) {
+    const resp = await fetch(url);
+    return resp.json();
+  }
 
-  resp = await fetch('https://api.github.com/emojis');
-  var emojis = await resp.json();
-
-  resp = await fetch('https://raw.githubusercontent.com/ozh/github-colors/master/colors.json');
-  var colors = await resp.json();
-
+  const emojis = await get('https://api.github.com/emojis');
+  const colors = await get('https://raw.githubusercontent.com/ozh/github-colors/master/colors.json');
 
   document.querySelectorAll('.repo-card').forEach(async function(el) {
-    var name = el.getAttribute('data-repo');
+    const name = el.getAttribute('data-repo');
 
-    resp = await fetch('https://api.github.com/repos/' + name);
-    var data = await resp.json();
+    const data = await get(`https://api.github.com/repos/${name}`);
 
     data.description = (data.description || '').replace(/:\w+:/g, function(match) {
-      var name = match.substring(1, match.length - 1);
-      var emoji = emojis[name];
+      const name = match.substring(1, match.length - 1);
+      const emoji = emojis[name];
+
       if (emoji) {
         return `<span><img src="${emoji}" style="width: 1rem; height: 1rem; vertical-align: -0.2rem;"></span>`;
       }
