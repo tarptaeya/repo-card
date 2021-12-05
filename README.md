@@ -2,7 +2,11 @@
 :sunglasses: showcase :octocat: repositories on your website :metal:!
 
 ## Demo
-<img src="https://github.com/Tarptaeya/repo-card/blob/master/screenshot.png" width=410></img>
+Light theme
+<img src="https://github.com/Tarptaeya/repo-card/blob/master/light-default.png" width=410></img>
+
+Dark theme
+<img src="https://github.com/Tarptaeya/repo-card/blob/master/dark-default.png" width=410></img>
 
 For a live demo, visit [https://tarptaeya.github.io/repo-card](https://tarptaeya.github.io/repo-card).
 
@@ -14,9 +18,13 @@ For a live demo, visit [https://tarptaeya.github.io/repo-card](https://tarptaeya
 
 <!-- inside body, where you want to create the card -->
 <div class="repo-card" data-repo="username/repository"></div>
+
+<!-- NEW: for dark theme just set data-theme attribute -->
+<div class="repo-card" data-repo="username/repository" data-theme="dark-theme"></div>
 ```
 
 ## Features
+- Supports dark theme
 - Supports GitHub emojis
 - Supports language colors
 - Hides stars and forks when their count is 0.
