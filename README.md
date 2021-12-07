@@ -31,5 +31,7 @@ For a live demo, visit [https://tarptaeya.github.io/repo-card](https://tarptaeya
 - Shows the source repository in case of fork.
 - Creates card similar to GitHub pinned repository's style
 
+### Related Projects
+
 ### Thanks
 - [ozh/github-colors](https://github.com/ozh/github-colors) for providing GitHub colors for all the languages.
