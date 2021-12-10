@@ -33,5 +33,7 @@ For a live demo, visit [https://tarptaeya.github.io/repo-card](https://tarptaeya
 
 ### Related Projects
 
+- [thislooksfun/svelte-repo-card](https://github.com/thislooksfun/svelte-repo-card)
+
 ### Thanks
 - [ozh/github-colors](https://github.com/ozh/github-colors) for providing GitHub colors for all the languages.
