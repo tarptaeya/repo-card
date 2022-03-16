@@ -24,6 +24,7 @@ For a live demo, visit [https://tarptaeya.github.io/repo-card](https://tarptaeya
 ```
 
 ## Features
+- Cache response to handle GitHub API rate limits (**NEW**)
 - Supports dark theme
 - Supports GitHub emojis
 - Supports language colors

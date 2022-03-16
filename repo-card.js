@@ -1,8 +1,9 @@
 window.addEventListener('DOMContentLoaded', async function() {
+  const CACHE_TIMEOUT = 60000;
   async function get(url) {
     const now = new Date().getTime();
     const prevResp = JSON.parse(localStorage.getItem(url));
-    if (prevResp && Math.abs(now - prevResp.time) < 60000) {
+    if (prevResp && Math.abs(now - prevResp.time) < CACHE_TIMEOUT) {
       return prevResp.data;
     }
     const resp = await fetch(url);
