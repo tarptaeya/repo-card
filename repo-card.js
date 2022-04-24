@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', async function() {
       color: '#586069',
       linkColor: '#0366d6',
     },
-    'dark-default': {
+    'dark-theme': {
       background: 'rgb(13, 17, 23)',
       borderColor: 'rgb(48, 54, 61)',
       color: 'rgb(139, 148, 158)',
