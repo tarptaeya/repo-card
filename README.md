@@ -19,8 +19,12 @@ For a live demo, visit [https://tarptaeya.github.io/repo-card](https://tarptaeya
 <!-- inside body, where you want to create the card -->
 <div class="repo-card" data-repo="username/repository"></div>
 
-<!-- NEW: for dark theme just set data-theme attribute -->
+<!-- for dark theme just set data-theme attribute -->
 <div class="repo-card" data-repo="username/repository" data-theme="dark-theme"></div>
+
+<!-- optional tag attributes to customize displayed name and description -->
+<!-- if omitted, default to data retrieved from GH -->
+<div class="repo-card" data-repo="username/repository" data-display-name="A Nicer Name" data-description="My description"></div>
 ```
 
 ## Features
@@ -31,6 +35,15 @@ For a live demo, visit [https://tarptaeya.github.io/repo-card](https://tarptaeya
 - Hides stars and forks when their count is 0.
 - Shows the source repository in case of fork.
 - Creates card similar to GitHub pinned repository's style
+- Element classes to expose components to external styling (CSS, Less, SCSS, ecc...)
+	- `.repo-card-background`
+	- `.repo-card-name`
+	- `.repo-card-icon`
+	- `.repo-card-fork-origin`
+	- `.repo-card-description`
+	- `.repo-card-language`
+	- `.repo-card-starred-count`
+	- `.repo-card-forks-count`
 
 ### Related Projects
 
