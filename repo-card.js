@@ -57,7 +57,7 @@ window.addEventListener('DOMContentLoaded', async function() {
       <div style="display: ${data.fork ? 'block' : 'none'}; font-size: 12px; color: ${theme.color};">Forked from <a style="color: inherit; text-decoration: none;" href="${data.fork ? data.source.html_url : ''}">${data.fork ? data.source.full_name : ''}</a></div>
       <div style="font-size: 12px; margin-bottom: 16px; margin-top: 8px; color: ${theme.color};">${data.description}</div>
       <div style="font-size: 12px; color: ${theme.color}; display: flex;">
-        <div style="${data.language ? '' : 'display: none'}; margin-right: 16px;">
+        <div style="${data.language ? '' : 'display: none;'} margin-right: 16px;">
           <span style="width: 12px; height: 12px; border-radius: 100%; background-color: ${data.language ? colors[data.language].color : ''}; display: inline-block; top: 1px; position: relative;"></span>
           <span>${data.language}</span>
         </div>
