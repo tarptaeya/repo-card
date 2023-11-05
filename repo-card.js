@@ -1,4 +1,6 @@
-window.addEventListener('DOMContentLoaded', async function() {
+window.tarptaeya = {};
+
+window.tarptaeya.reloadRepoCards = async function() {
   const CACHE_TIMEOUT = 60000;
   async function get(url) {
     const now = new Date().getTime();
@@ -73,4 +75,7 @@ window.addEventListener('DOMContentLoaded', async function() {
     </div>
     `;
   }
-});
+};
+
+window.addEventListener('DOMContentLoaded', window.tarptaeya.reloadRepoCards);
+
