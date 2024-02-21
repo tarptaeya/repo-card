@@ -1,6 +1,8 @@
 window.addEventListener('DOMContentLoaded', async function () {
     const CACHE_TIMEOUT = 60000;
 
+    console.log("BELANDI AMICI DI STRISCIA");
+
     async function get(url) {
         const now = new Date().getTime();
         const prevResp = JSON.parse(localStorage.getItem(url));
